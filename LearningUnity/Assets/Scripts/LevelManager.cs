@@ -5,6 +5,12 @@ public class LevelManager : MonoBehaviour {
 
     public GameObject currentCheckPoint;
     private Player player;
+
+    public GameObject deathParticle;
+    public GameObject respawnParticle;
+
+    public float respawnDelay;
+
 	// Use this for initialization
 	void Start () {
         player = FindObjectOfType<Player>();
@@ -17,7 +23,19 @@ public class LevelManager : MonoBehaviour {
 
     public void RespawnPlayer()
     {
+        StartCoroutine("RespawnPlayerCo");
+    }
+
+    public IEnumerator RespawnPlayerCo()
+    {
+        Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+        player.enabled = false;
+        player.GetComponent<Renderer>().enabled = false;
         Debug.Log("Player Respawn");
+        yield return new WaitForSeconds(respawnDelay);
         player.transform.position = currentCheckPoint.transform.position;
+        Instantiate(respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
+        player.enabled = true;
+        player.GetComponent<Renderer>().enabled = true;
     }
 }

@@ -15,6 +15,6 @@ public class DestroyFinishedParticle : MonoBehaviour {
         if (thisParticleSystem.isPlaying)
             return;
 
-        Destroy(gameObject);
+        Destroy(this.gameObject);
 	}
 }

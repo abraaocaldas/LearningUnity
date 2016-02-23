@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 307f68541a515de47af6bcd6467508b5
-timeCreated: 1456146687
+timeCreated: 1456236572
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,6 +9,7 @@ TextureImporter:
     21300004: Spikes
     21300006: Player_Walking_1
     21300008: Player_Walking_2
+    21300010: Coin_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -106,6 +107,17 @@ TextureImporter:
         y: 111
         width: 16
         height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Coin_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 84
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

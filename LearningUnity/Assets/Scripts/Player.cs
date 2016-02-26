@@ -17,6 +17,9 @@ public class Player : MonoBehaviour {
 
     private Animator animator;
 
+    public Transform firePoint;
+    public GameObject ninjaStar;
+
 	// Use this for initialization
 	void Start () {
         GetComponent<Rigidbody2D>().freezeRotation = true;
@@ -57,6 +60,10 @@ public class Player : MonoBehaviour {
             //GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
             moveVelocity = -moveSpeed;
         }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Instantiate(ninjaStar, firePoint.position, firePoint.rotation);
+        }
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 
@@ -70,6 +77,8 @@ public class Player : MonoBehaviour {
         {
             transform.localScale = new Vector3(-1f, 1f,1f);
         }
+
+        
     }
 
     void Jump()

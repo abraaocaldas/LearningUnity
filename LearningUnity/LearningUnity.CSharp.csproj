@@ -67,7 +67,10 @@
     <Compile Include="Assets\Scripts\CheckPoints.cs" />
     <Compile Include="Assets\Scripts\CoinPickup.cs" />
     <Compile Include="Assets\Scripts\DestroyFinishedParticle.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealthManager.cs" />
     <Compile Include="Assets\Scripts\EnemyPatrol.cs" />
+    <Compile Include="Assets\Scripts\HealthManager.cs" />
+    <Compile Include="Assets\Scripts\HurtPlayerOnContact.cs" />
     <Compile Include="Assets\Scripts\KillPlayer.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\NinjaStarController.cs" />

@@ -20,6 +20,8 @@ public class Player : MonoBehaviour {
     public Transform firePoint;
     public GameObject ninjaStar;
 
+    public float shotDelay;
+    private float shotDelayCounter;
 	// Use this for initialization
 	void Start () {
         GetComponent<Rigidbody2D>().freezeRotation = true;
@@ -63,6 +65,17 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             Instantiate(ninjaStar, firePoint.position, firePoint.rotation);
+            shotDelayCounter = shotDelay;
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            shotDelayCounter -= Time.deltaTime;
+
+            if(shotDelayCounter <= 0)
+            {
+                Instantiate(ninjaStar, firePoint.position, firePoint.rotation);
+                shotDelayCounter = shotDelay;
+            }
         }
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
